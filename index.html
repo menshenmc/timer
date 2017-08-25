@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>计时器</title>
+</head>
+<body>
+
+	<div class="top">
+		<div class="container">
+			<p id="time"></p>
+		</div>
+	</div>
+
+</body>
+</html>
+<script>
+
+	//计时器
+	var arr = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+
+	function showTime(){
+		var now = new Date();
+		var year = now.getFullYear();
+		var month = now.getMonth() + 1;
+		var day = now.getDate();
+		var ji = arr[now.getDay()];
+		var hour = now.getHours();
+		var min = now.getMinutes();
+		var sec = now.getSeconds();
+		var str = year + " 年 " + month + " 月 " + day + " 日 " + hour + " 时 " + min + " 分 " + sec + " 秒 " + ji;
+		var time = document.getElementById('time');
+		time.innerHTML = str;
+	}
+	showTime();
+	setInterval(function(){
+		showTime();
+	}, 1000);
+	
+	
+</script>
